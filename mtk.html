@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project mtk</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url(hda.jpeg);
+        background-size: cover;
+        color: #fff;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .tombol-hitung {
+        background: transparent;
+        color: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 5px;
+        border: 2px solid white;
+        /* width: 6%;
+        height: 2%; */
+        max-height: 200px;
+        max-width: 300px;
+        font-size: 1em;
+        position: center;
+        margin-top: 4px;
+        transition: .5s;
+    }
+
+    .tombol-hitung:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+    }
+
+    .tombol-sjr {
+        /* width: 5%;
+        height: 30px; */
+        max-height: 200px;
+        max-width: 300px;
+        background: transparent;
+        border: 2px solid white;
+        outline: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 1em;
+        color: #fff;
+        font-weight: 500;
+        position: relative;
+        transition: .5s;
+        margin-left: 15px;
+    }
+
+    .tombol-sjr:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+    }
+
+    .tombol-dsc {
+        /* width: 7%;
+        height: 30px; */
+        max-height: 200px;
+        max-width: 300px;
+        background: transparent;
+        border: 2px solid white;
+        outline: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 1em;
+        color: #fff;
+        font-weight: 500;
+        margin-left: 2px;
+        transition: .5s;
+    }
+
+    .tombol-dsc:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+    }
+
+    .jarijarihtng {
+        margin-left: 14px;
+        border-radius: 4px;
+    }
+
+    .img1 {
+        margin-left: 17px;
+    }
+</style>
+
+<body>
+    <center>
+        <h1>Menghitung Luas lingkaran</h1>
+        <label class="label" for="jarijari">Jari-jari</label><br>
+        <input type="number" class="jarijarihtng" id="jarijari" min="0"> cm<br>
+        <button class="tombol-hitung" id="hitung">Hitung</button>
+        <div id="output"></div>
+
+        <script>
+            function hitungLuas() {
+                const jariJariInput = document.getElementById('jarijari');
+                const output = document.getElementById('output');
+                let jariJari = parseFloat(jariJariInput.value);
+
+                if (isNaN(jariJari)) {
+                    output.innerHTML = '';
+                    return;
+                }
+
+                let luas = 3.14 * jariJari * jariJari;
+                let formattedLuas = luas.toLocaleString('id-ID'); 
+                output.innerHTML = `Jadi hasil menghitung luas lingkaran (3,14 x ${jariJari}²) adalah ${formattedLuas} cm²`;
+            }
+
+            const hitungButton = document.getElementById('hitung');
+            hitungButton.addEventListener('click', hitungLuas);
+        </script>
+    </center>
+    <br>
+    <center>
+        <!-- <button class="tombol-sjr"><a style="font-size: 25px;" href="sejarah.html"
+                target="_self">Sejarah</a></button> -->
+        <a href="sejarah.html"><button class="tombol-sjr">Sejarah</button></a>
+        <!-- <button class="tombol-dsc"><a style="font-size: 25px;" a href="description.html"
+                target="_self">Description</a></button> -->
+        <a href="description.html"><button class="tombol-dsc">Description</button></a>
+        <br>
+        <p>Rumus Luas Lingkaran di bawah ini</p>
+    </center>
+    <center><img class="img1" src="awalan.png" width="30%" alt=""> </center>
+</body>
+
+</html>

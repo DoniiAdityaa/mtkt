@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project mtk</title>
+</head>
+<style>
+    /* Style CSS yang telah diberikan */
+</style>
+
+<body>
+    <center>
+        <h1>Menghitung Luas lingkaran</h1>
+        <label class="label" for="jarijari">Jari-jari</label><br>
+        <input type="number" class="jarijarihtng" id="jarijari" min="0"> cm<br>
+        <button class="tombol-hitung" id="hitung">Hitung</button>
+        <div id="output"></div>
+
+        <script>
+            function hitungLuas() {
+                const jariJariInput = document.getElementById('jarijari');
+                const output = document.getElementById('output');
+                let jariJari = parseFloat(jariJariInput.value);
+
+                if (isNaN(jariJari)) {
+                    output.innerHTML = 'Masukkan angka yang valid untuk jari-jari.';
+                    return;
+                }
+
+                // Menggunakan nilai 3.14 sebagai π
+                let luas = 3.14 * jariJari * jariJari;
+                let formattedLuas = luas.toLocaleString('id-ID'); // Format angka dengan tanda ribuan
+                output.innerHTML = `Jadi hasil menghitung luas lingkaran (3,14 x ${jariJari}²) adalahi ${jariJari} cm adalah ${formattedLuas} cm²`;
+            }
+
+            const hitungButton = document.getElementById('hitung');
+            hitungButton.addEventListener('click', hitungLuas);
+        </script>
+    </center>
+    <br>
+    <!-- Bagian lain dari kode HTML -->
+</body>
+
+</html>
